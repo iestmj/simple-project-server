@@ -16,7 +16,7 @@ pipeline {
             }
         stage('Deploy') {
             steps {
-		echo "Deploy"
+		sh 'docker push iestmj/simple-project:latest'
             }
         }
     }
