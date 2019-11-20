@@ -22,14 +22,20 @@ pipeline {
     
 
 stage('Testing') {
+            when {
+                expression {
+                        env.BRANCH_NAME!='master' &&'developer'
+                }
+        }
             steps {
-                echo "hello"
+                echo "testing"
             }
         }
+
       stage('Staging') {
         when {
                 expression {
-                        env.BRANCH_NAME=='developer'
+                        env.BRANCH_NAME=='developer' && 'master'
                 }
         }
             steps {
