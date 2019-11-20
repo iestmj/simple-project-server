@@ -19,7 +19,7 @@ pipeline {
 		sh 'docker push iestmj/simple-project:latest'
             }
         }
-    }
+    
 
 stage('Testing') {
             steps {
@@ -36,4 +36,5 @@ stage('Testing') {
                 echo "hello"
             }
         }
+}
 }
