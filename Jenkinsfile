@@ -19,6 +19,27 @@ pipeline {
 		sh 'docker push iestmj/simple-project:latest'
             }
         }
-    }
-}
+    
 
+stage('Testing') {
+            steps {
+                echo "hello"
+            }
+        }
+      stage('Staging') {
+            steps {
+                echo "hello"
+            }
+        }
+      stage('Production') {
+	when {
+		expression {
+			env.BRANCH_NAME=='master'
+		}
+	}
+            steps {
+                echo "production"
+            }
+        }
+}
+}
