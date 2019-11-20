@@ -22,12 +22,12 @@ pipeline {
         stage('Build') {
             steps {
 		sh 'mvn package -DskipTests'
-		sh 'docker build -t="iestmj/simple-project:latest" .'
+		sh 'docker build -t="iestmj/simple-project:${VERSION}" .'
                 }
             }
         stage('Deploy') {
             steps {
-		sh 'docker push iestmj/simple-project:latest'
+		sh 'docker push iestmj/simple-project:{VERSION}'
             }
         }
     
