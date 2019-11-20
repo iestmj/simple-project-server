@@ -35,7 +35,7 @@ stage('Testing') {
       stage('Staging') {
         when {
                 expression {
-                        env.BRANCH_NAME=='developer'
+                        env.BRANCH_NAME=='developer' && 'master'
                 }
         }
             steps {
