@@ -24,7 +24,7 @@ pipeline {
 stage('Testing') {
             when {
                 expression {
-                        env.BRANCH_NAME!='master' &&'developer'
+                        env.BRANCH_NAME!='master' && 'developer'
                 }
         }
             steps {
