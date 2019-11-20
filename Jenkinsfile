@@ -27,7 +27,7 @@ pipeline {
             }
         stage('Deploy') {
             steps {
-		sh 'docker push iestmj/simple-project:{VERSION}'
+		sh 'docker push iestmj/simple-project:${VERSION}'
             }
         }
     
