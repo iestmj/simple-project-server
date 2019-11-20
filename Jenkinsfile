@@ -4,8 +4,13 @@ pipeline {
    VERSION = readMavenPom().getVersion()
 	}
 	stages {
-		echo "${VERSION}"
+		stage("version") {
+			steps {
+				echo "${VERSION}"
+			}	
+		}	
 	}
+
     stages {
         stage('Testing Environment') {
             steps {
