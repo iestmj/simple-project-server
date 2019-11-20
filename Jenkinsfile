@@ -3,15 +3,16 @@ pipeline {
 	environment {
    VERSION = readMavenPom().getVersion()
 	}
-	stages {
-		stage("version") {
-			steps {
-				echo "${VERSION}"
-			}	
-		}	
-	}
 
     stages {
+		stage("version") {
+                        steps {
+                                echo "${VERSION}"
+                        }
+                }
+
+
+
         stage('Testing Environment') {
             steps {
                     sh 'mvn test -Dtest=ControllerAndServiceSuite'
